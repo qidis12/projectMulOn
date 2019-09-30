@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Canvas HTML</title>
+</head>
+<style type="text/css">
+	canvas{
+			background-color: #ccc;
+			}
+</style>
+<body>
+	<canvas width="800" height="450" id="canvas"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById('canvas');
+		var ctx=c.getContext('2d');
+		
+		
+			//sg1
+		ctx.beginPath();
+		ctx.moveTo(100,200);
+		ctx.lineTo(200,300);
+		ctx.lineTo(200,100);
+		ctx.closePath();
+		ctx.strokeStyle="green";
+		ctx.fillStyle="green";
+		ctx.fill();
+		ctx.stroke();
+
+			//sg1
+		ctx.beginPath();
+		ctx.moveTo(600,100);
+		ctx.lineTo(700,200);
+		ctx.lineTo(600,300);
+		ctx.closePath();
+		ctx.strokeStyle="green";
+		ctx.fillStyle="green";
+		ctx.fill();
+		ctx.stroke();
+	
+		//lingkaran
+		ctx.beginPath();
+		ctx.arc(400, 200, 100, 0, 2 * Math.PI);
+		ctx.fillStyle = "maroon";
+		ctx.lineWidth=4;
+		ctx.strokeStyle="white";
+		ctx.fill();
+		ctx.stroke();
+
+		//lingkaran2
+		ctx.beginPath();
+		ctx.arc(400, 200, 70, 0, 2 * Math.PI);
+		ctx.fillStyle = "orange";
+		ctx.fill();
+
+
+		//kotak
+		ctx.beginPath();
+		ctx.rect(360, 160, 80, 80);
+		ctx.strokeStyle="white";
+		ctx.lineWidth=5;
+		ctx.fillStyle = "rgb(0, 255, 254)";
+		ctx.fill();
+		ctx.stroke();
+
+
+
+		</script>
+</body>
+</html>
