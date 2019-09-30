@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>click mouse and draw line</title>
+</head>
+<style type="text/css">
+	canvas{
+			background-color: #ccc;
+			}
+</style>
+<body>
+	<canvas width="800" height="450" id="canvas"></canvas>
+	<script type="text/javascript">
+		var c=document.getElementById('canvas');
+		var ctx=c.getContext('2d');
+		
+		document.body.addEventListener('mousedown',drawline);
+		function drawline(e)
+		{
+			var x=e.offsetX;
+			var y=e.offsetY;
+			ctx.lineTo(x,y);
+			ctx.lineWidth=2;
+			ctx.strokeStyle='black';
+			ctx.stroke();
+		}
+		
+		document.body.addEventListener('keydown',enter);
+		function enter(e)
+		{
+			var code = e.keyCode;
+			if(code == 13){
+				ctx.fillStyle = "green";
+				ctx.fill();
+			}
+			else{
+				alert("Tekan Enter Pada Keyboar Untuk Poligon")
+			}
+		}
+
+
+		</script>
+</body>
+</html>
