@@ -130,7 +130,7 @@ function dragable(sprite,target)
     function calculateDistance()
     {
         var dist=Math.sqrt(((sprite.x-target.x)*(sprite.x-target.x))+((sprite.y-target.y)*(sprite.y-target.y)));       
-        if(dist<30){
+        if(dist<5){
           sprite.x=target.x;
           sprite.y=target.y;
         }
