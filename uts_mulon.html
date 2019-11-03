@@ -1,0 +1,62 @@
+<html> 
+<head> 
+<title>UTS MULTIMEDIA ONLINE 2019</title> 
+</head> 
+<body> 
+  <p>Nama : Sidiq Muhammad NurchOlis</p>
+  <p>NIM : 1700016012</p>
+
+  <P>GERAKKAN TERUS KURSOR DI CANVAS</P>
+<canvas id="Canvas" width="1024" height="768"> 
+</canvas> 
+<script> 
+ 
+var canvas = document.getElementById("Canvas"); 
+ 
+var ctx = canvas.getContext("2d"); 
+ 
+ctx.fillStyle = "black"; 
+ctx.fillRect(0,0,canvas.width,canvas.height); 
+ 
+var warna=["#DCF100","#86F1FF","#FF1D00","#FF00F4","blue"]; 
+ 
+var num=0;a=0,jum=0,maxjum=100; 
+var x,y,rot,a; 
+function Menggambar() 
+{ 
+ var d=250*Math.random(); 
+ var scale=10.0*jum/maxjum; 
+ if(scale<0.25)scale=0.25; 
+ d*=scale; 
+ if(num%50==0){ 
+  x=0.25*canvas.width+0.5*canvas.width*Math.random(); 
+  y=0.25*canvas.height+0.5*canvas.height*Math.random(); 
+  rot=(-180+360*Math.random())*Math.PI/180; 
+  a=Math.floor(warna.length*Math.random()); 
+  num=10; 
+  jum++; 
+ } 
+ if(jum<maxjum){ 
+  ctx.save(); 
+  ctx.translate(x,y+(-10+30*Math.random())*scale); 
+  ctx.rotate(rot+(-15+(30*Math.random())*Math.PI/180)); 
+  ctx.beginPath(); 
+  for(i=0;i<2*d;i++){ 
+   ctx.fillStyle=warna[a]; 
+   ctx.globalAlpha=(i<d)?(1.0-1.0*Math.abs(1.0*i-d)/d):(1.0-1.0*Math.abs(i-d)/d); 
+   ctx.globalAlpha*=scale; 
+   ctx.fillRect(i-d,0,1,1); 
+  } 
+  ctx.closePath(); 
+  ctx.restore(); 
+  num++; 
+  window.requestAnimationFrame(gambar); 
+ } 
+} 
+ function gambar(){
+  window.addEventListener("mousemove",Menggambar);
+ }
+Menggambar();
+</script> 
+</body> 
+</html> 
