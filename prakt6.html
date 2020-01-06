@@ -142,7 +142,7 @@
                 // When loaded, decode the data and play the sound
                 request.onload = function () {
                     audioContext.decodeAudioData(request.response, function (buffer) {
-                        document.getElementById('msg').textContent = ">now playing: True Damage - GIANTS";
+                        document.getElementById('msg').textContent = ">now playing: Amemuji >> Kyai Kanjeng";
                         audioData = buffer;
                         playSound(audioData);
                     }, onError);
